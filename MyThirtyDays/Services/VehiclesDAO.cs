@@ -10,7 +10,7 @@ namespace MyThirtyDays.Services
         {
             int NewIdNumber = -1;
 
-            string sqlStatement = "DELETE FROM DBO.Vehicles WHERE Id = @Id";
+            string sqlStatement = "DELETE FROM DBO.Vehicles WHERE VehicleId = @Id";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

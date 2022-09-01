@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MyThirtyDays.Models.VehiclesModel>
+
+<!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+@foreach (var item in Model) {
+        
+        
+
+    <div class="card" style="width: 18rem;">
+            <img src="https://loremflickr.com/150/150/@item.VehicleModel?lock=@item.VehicleId" class="card-img-top" alt="@item.VehicleMake">
+        <div class="card-body">
+            <h5 class="card-title">@item.VehicleMake</h5>
+            <p class="card-text">@item.VehicleModel</p>
+            <p class="card-text">@item.VehicleRegistrationPlate</p>
+            <p class="card-text">@Html.DisplayFor(m => item.VehicleCapacity)</p>
+            
+
+            <div class="container">
+                <div class="flex-sm-row">
+                    <div class="flex-sm-column">
+                    <a href="/vehicles/vehicle/?VehicleId=@item.VehicleId" class="btn btn-primary">Details</a>
+                    </div>
+                    <div class="flex-column">
+                    <a href="/vehicles/Edit/?VehicleId=@item.VehicleId" class="btn btn-primary">Edit</a>
+                    </div>
+                    <div class="flex-column">
+                    <a href="/vehicles/Delete/?VehicleId=@item.VehicleId" class="btn btn-primary">Delete</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+</div>
+
+                    <!-- Content Row -->
+
+                    </div>
+                    <!-- /.container-fluid -->

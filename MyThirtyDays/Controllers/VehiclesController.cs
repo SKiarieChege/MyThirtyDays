@@ -10,8 +10,8 @@ namespace MyThirtyDays.Controllers
         [Authorize]
         public IActionResult Index()
         {
-            VehiclesDAO vahicles = new VehiclesDAO();
-            return View();
+            VehiclesDAO vehicles = new VehiclesDAO();
+            return View(vehicles.GetAllVehicles());
         }
 
         [Authorize]
@@ -20,7 +20,7 @@ namespace MyThirtyDays.Controllers
             VehiclesDAO vehicles = new VehiclesDAO();
             VehiclesModel vehicle = vehicles.GetVehicleById(VehicleId);
 
-            return View(vehicle);
+            return View("vehicle",vehicle);
         }
 
         [Authorize]

@@ -3,6 +3,10 @@
 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
+                    <div>
+                        <h1>Fleet</h1>
+                    </div>
+                    <hr/>
                     <!-- Content Row -->
                     <div class="row">
 
@@ -10,28 +14,34 @@
         
         
 
-    <div class="card" style="width: 18rem;">
-            <img src="https://loremflickr.com/150/150/@item.VehicleModel?lock=@item.VehicleId" class="card-img-top" alt="@item.VehicleMake">
+    <div class="card" style="width: 18rem;padding-top: 10px;">
+            <img src="@item.FrontView_ImagePath" class="card-img-top" alt="@item.VehicleMake:@item.VehicleModel" style="aspect-ratio: 16/9;">
         <div class="card-body">
-            <h5 class="card-title">@item.VehicleMake</h5>
-            <p class="card-text">@item.VehicleModel</p>
-            <p class="card-text">@item.VehicleRegistrationPlate</p>
-            <p class="card-text">@Html.DisplayFor(m => item.VehicleCapacity)</p>
+            <h5 class="card-title">Model: @item.VehicleMake</h5>
+            <p class="card-text">Make: @item.VehicleModel</p>
+            <p class="card-text">Registration: @item.VehicleRegistrationPlate</p>
+            <p class="card-text">Capacity: @Html.DisplayFor(m => item.VehicleCapacity) Tonnes</p>
             
 
-            <div class="container">
+            @*<div class="container">*@
+
                 <div class="flex-sm-row">
+
                     <div class="flex-sm-column">
-                    <a href="/vehicles/vehicle/?VehicleId=@item.VehicleId" class="btn btn-primary">Details</a>
+                    <a href="/vehicles/Vehicle/?VehicleId=@item.VehicleId" class="btn btn-primary">Details</a>
                     </div>
-                    <div class="flex-column">
+
+                    <div class="flex-sm-column">
                     <a href="/vehicles/Edit/?VehicleId=@item.VehicleId" class="btn btn-primary">Edit</a>
                     </div>
+
+                 </div>
+                 <div class="flex-sm-row">
                     <div class="flex-column">
-                    <a href="/vehicles/Delete/?VehicleId=@item.VehicleId" class="btn btn-primary">Delete</a>
+                    <a href="/vehicles/Delete/?VehicleId=@item.VehicleId" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
-            </div>
+            @*</div>*@
 
         </div>
     </div>

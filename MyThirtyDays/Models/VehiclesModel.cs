@@ -12,6 +12,8 @@ namespace MyThirtyDays.Models
         [DisplayName("Vehicle Carrying Capacity")]
         public decimal VehicleCapacity { get; set; }
         [DisplayName("Vehicle Registration Plate")]
-        public string VehicleRegistrationPlate { get; set; }    
+        public string VehicleRegistrationPlate { get; set; }  
+        
+        public string FrontView_ImagePath { get; set; }    
     }
 }

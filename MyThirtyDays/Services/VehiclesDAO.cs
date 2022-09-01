@@ -49,7 +49,14 @@ namespace MyThirtyDays.Services
 
                     while(reader.Read())
                     {
-                        foundVehicles.Add(new VehiclesModel { VehicleId = (int)reader[0], VehicleMake = (string)reader[1], VehicleModel = (string)reader[2], VehicleCapacity = (decimal)reader[3], VehicleRegistrationPlate = (string)reader[4] });
+                        foundVehicles.Add(new VehiclesModel 
+                        {   VehicleId = (int)reader[0], 
+                            VehicleMake = (string)reader[1], 
+                            VehicleModel = (string)reader[2], 
+                            VehicleCapacity = (decimal)reader[3], 
+                            VehicleRegistrationPlate = (string)reader[4],
+                            FrontView_ImagePath = (string)reader[5]
+                        });
                     }
                     
                 }
@@ -66,7 +73,7 @@ namespace MyThirtyDays.Services
         {
             VehiclesModel foundVehicle = null;
 
-            string sqlStatement = "SELECT * FROM DBO.Vehicles WHERE Id = @Id";
+            string sqlStatement = "SELECT * FROM DBO.Vehicles WHERE VehicleId = @Id";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -85,9 +92,10 @@ namespace MyThirtyDays.Services
                         {
                             VehicleId = (int)reader[0],
                             VehicleMake = (string)reader[1],
-                            VehicleModel= (string)reader[1],
-                            VehicleCapacity = (decimal)reader[2],
-                            VehicleRegistrationPlate = (string)reader[3]
+                            VehicleModel= (string)reader[2],
+                            VehicleCapacity = (decimal)reader[3],
+                            VehicleRegistrationPlate = (string)reader[4],
+                            FrontView_ImagePath = (string)reader[5]
                         };
                     }
                 }

@@ -15,7 +15,7 @@ namespace MyThirtyDays.Controllers
         }
 
         [Authorize]
-        public IActionResult ShowDetails(int VehicleId)
+        public IActionResult Vehicle(int VehicleId)
         {
             VehiclesDAO vehicles = new VehiclesDAO();
             VehiclesModel vehicle = vehicles.GetVehicleById(VehicleId);
